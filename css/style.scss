@@ -1,0 +1,385 @@
+/* ---reset.css--- */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+button,
+footer,
+header,
+section {
+  margin: 0;
+  padding: 0;
+  // border: 1px solid salmon;
+  // box-sizing: border-box;
+}
+
+$main-color-100: #cfffa0;
+$main-color-200: #498624;
+$main-color-300: #202a20;
+$font: "Montserrat", "Noto Sans TC", sans-serif;
+
+/*--------- 共通設定 ---------*/
+body {
+  font-family: $font;
+  font-optical-sizing: auto;
+  padding: 1vw 2vw;
+}
+::selection {
+  color: $main-color-300;
+  background-color: $main-color-100;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 20px 0;
+}
+a,
+button {
+  color: $main-color-300;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+footer {
+  padding-top: 20px;
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: $main-color-300;
+  }
+}
+
+@media (max-width: 991px) {
+  body {
+    padding: 3vw;
+  }
+}
+
+/*--------- 首頁 ---------*/
+.gallery {
+  display: flex;
+  gap: 30px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  width: 33.3333%;
+  gap: 30px;
+}
+
+.item {
+  width: 100%;
+
+  .name {
+    opacity: 0;
+    position: absolute;
+    bottom: -5px;
+    z-index: 4;
+    transform: translateY(0);
+    transition: all 0.2s;
+
+    p {
+      color: $main-color-300;
+      border-bottom: 1px solid $main-color-300;
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      margin-left: 6px;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    background: #ffffff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: all 0.6s;
+  }
+
+  &:hover {
+    &::before {
+      content: "";
+      height: 30px;
+      background: #fff;
+    }
+
+    .name {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.item img {
+  width: 100%;
+  display: block;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+  .gallery {
+    flex-direction: column;
+  }
+
+  .flex-column {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .flex-column .item {
+    width: 100%;
+  }
+}
+
+/*--------- 選單 ---------*/
+#header {
+  height: 50px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    width: 180px;
+    img {
+      width: 100%;
+    }
+  }
+
+  nav {
+    display: flex;
+    .mail {
+      width: 25px;
+      height: 25px;
+      padding: 10px 0 0 20px;
+      cursor: pointer;
+      .mail-text {
+        display: none;
+        line-height: 25px;
+        margin: -1.5px;
+        font-style: italic;
+        color: $main-color-200;
+      }
+      &:hover {
+        width: unset;
+        .mail-text {
+          display: block;
+        }
+        .mail-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.filter-buttons button {
+  font-size: 16px;
+  font-family: $font;
+  font-weight: 500;
+  color: $main-color-300;
+  background: none;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 10px;
+  margin: 2px 5px;
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    left: -3px;
+    background: $main-color-300;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.filter-buttons button:hover,
+.filter-buttons button:active {
+  &::before {
+    content: "";
+    background: $main-color-200;
+  }
+}
+
+.filter-buttons button:focus {
+  &::before {
+    content: "";
+    background: $main-color-200;
+  }
+}
+@media (max-width: 991px) {
+  .filter-buttons button {
+    &::before {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+/*--------- 漢堡 ---------*/
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 30px;
+  height: 22px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $main-color-300;
+  left: 0;
+  transition: all 0.4s ease;
+}
+
+/* 三條線重疊時的位置 */
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 18px;
+}
+
+/* 點擊後變成 X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px; /* 中心點 */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 9px; /* 中心點 */
+}
+
+@media (max-width: 991px) {
+  .hamburger {
+    display: flex;
+    right: 3vw;
+  }
+
+  nav#nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+    .filter-buttons {
+      margin: 20px auto;
+      button {
+        margin: 15px auto;
+        display: block;
+      }
+    }
+    .mail {
+      padding: 5px;
+    }
+  }
+
+  nav#nav-menu.active {
+    top: 0;
+  }
+}
+
+/*--------- 作品分頁 ---------*/
+.work {
+  display: flex;
+  gap: 2vw;
+  .info {
+    width: 24vw;
+    .title {
+      width: fit-content;
+      color: $main-color-300;
+      font-weight: 500;
+      box-shadow: 0 1.2px;
+      padding-bottom: 3px;
+    }
+    .describe {
+      color: $main-color-300;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 15px 0;
+      font-weight: 400;
+      text-align: justify;
+    }
+    .credit {
+      font-size: 12px;
+      line-height: 1.4;
+      color: $main-color-200;
+    }
+  }
+  .images {
+    width: 70vw;
+    img,video {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .work {
+    flex-direction: column;
+    gap: 3vw;
+    .info {
+      width: 94vw;
+    }
+    .images {
+      width: 94vw;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
