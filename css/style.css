@@ -348,10 +348,16 @@ header nav .mail:hover .mail-icon {
 .work .images {
   width: 70vw;
 }
-.work .images img, .work .images video {
+.work .images img,
+.work .images video {
   width: 100%;
 }
 
+@media (min-width: 992px) and (max-width: 1400px) {
+  .two-lines {
+    display: block;
+  }
+}
 @media (max-width: 991px) {
   .work {
     flex-direction: column;

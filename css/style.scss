@@ -363,9 +363,15 @@ header {
   }
   .images {
     width: 70vw;
-    img,video {
+    img,
+    video {
       width: 100%;
     }
+  }
+}
+@media (min-width: 992px) and (max-width: 1400px) {
+  .two-lines {
+    display: block;
   }
 }
 @media (max-width: 991px) {
