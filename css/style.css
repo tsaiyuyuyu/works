@@ -70,14 +70,14 @@ footer p {
 /*--------- 首頁 ---------*/
 .gallery {
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 .flex-column {
   display: flex;
   flex-direction: column;
   width: 33.3333%;
-  gap: 30px;
+  gap: 10px;
 }
 
 .item {
@@ -347,10 +347,16 @@ header nav .mail:hover .mail-icon {
 }
 .work .images {
   width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
 }
 .work .images img,
 .work .images video {
   width: 100%;
+}
+.work .images div.half {
+  width: 34vw;
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
@@ -371,5 +377,8 @@ header nav .mail:hover .mail-icon {
   }
   .work .images img {
     width: 100%;
+  }
+  .work .images div.half {
+    width: 94vw;
   }
 }/*# sourceMappingURL=style.css.map */
