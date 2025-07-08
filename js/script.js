@@ -117,3 +117,36 @@ function setupHamburgerMenu() {
     });
   });
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentFile = location.pathname.split("/").pop() || "index.html";
+  if (currentFile === "index.html") return;
+
+  fetch("works.json")
+    .then((res) => res.json())
+    .then((pages) => {
+      const pageFiles = pages.map((p) => p.file);
+      const currentIndex = pageFiles.indexOf(currentFile);
+      const nextFile = pageFiles[(currentIndex + 1) % pageFiles.length];
+
+      const nextBtn = document.createElement("a");
+      nextBtn.href = nextFile;
+      nextBtn.className = "next-button";
+      nextBtn.textContent = "View next >";
+
+      const footer = document.querySelector("footer");
+      if (footer) {
+        footer.appendChild(nextBtn);
+      } else {
+        console.warn("⚠️ 找不到 <footer>，無法插入 View next 按鈕");
+      }
+    })
+    .catch((error) => {
+      console.error("無法載入作品清單 works.json:", error);
+    });
+});
+
+
+
+

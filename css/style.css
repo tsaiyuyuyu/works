@@ -26,7 +26,6 @@ section {
 body {
   font-family: "Montserrat", "Noto Sans TC", sans-serif;
   font-optical-sizing: auto;
-  padding: 1vw 2vw;
 }
 
 ::-moz-selection {
@@ -43,7 +42,7 @@ body {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 20px 0;
+  padding: 20px 2vw;
 }
 
 a,
@@ -54,12 +53,31 @@ button {
 }
 
 footer {
-  padding-top: 20px;
+  padding: 20px 2vw 1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 footer p {
   font-size: 12px;
   font-weight: 400;
   color: #202a20;
+}
+
+.next-button {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #202a20;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 16px;
+  font-style: italic;
+  font-weight: 500;
+  padding: 0 0 5px;
+  transition: background 0.3s ease;
+}
+.next-button:hover {
+  color: #498624;
 }
 
 @media (max-width: 991px) {
@@ -159,6 +177,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1vw 2vw;
 }
 header .logo {
   width: 180px;
