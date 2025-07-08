@@ -81,8 +81,8 @@ footer p {
 }
 
 @media (max-width: 991px) {
-  body {
-    padding: 3vw;
+  .container {
+    padding: 10px 0;
   }
 }
 /*--------- 首頁 ---------*/
@@ -390,14 +390,15 @@ header nav .mail:hover .mail-icon {
   }
   .work .info {
     width: 94vw;
+    padding: 1vw 3vw;
   }
   .work .images {
-    width: 94vw;
+    width: 100vw;
   }
   .work .images img {
     width: 100%;
   }
   .work .images div.half {
-    width: 94vw;
+    width: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */

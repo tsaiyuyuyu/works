@@ -80,8 +80,8 @@ footer {
 }
 
 @media (max-width: 991px) {
-  body {
-    padding: 3vw;
+  .container {
+    padding: 10px 0;
   }
 }
 
@@ -406,14 +406,15 @@ header {
     gap: 3vw;
     .info {
       width: 94vw;
+      padding: 1vw 3vw;
     }
     .images {
-      width: 94vw;
+      width: 100vw;
       img {
         width: 100%;
       }
       div.half {
-        width: 94vw;
+        width: 100vw;
       }
     }
   }
