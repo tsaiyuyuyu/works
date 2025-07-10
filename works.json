@@ -1,5 +1,13 @@
 [
   { "title": "北投會館", "file": "beitou.html" },
-  { "title": "捷運品牌", "file": "metro.html" },
-  { "title": "資訊圖表", "file": "infographic.html" }
+  { "title": "台北捷運", "file": "metro.html" },
+  { "title": "資訊圖表合集", "file": "infographic.html" },
+  { "title": "插畫合集", "file": "illustration.html" },
+  { "title": "標準字合集", "file": "logotype.html" },
+  { "title": "桌遊卡牌", "file": "card.html" },
+  { "title": "美數角色", "file": "anu.html" },
+  { "title": "來好地圖", "file": "map.html" },
+  { "title": "來好明信片", "file": "postcard.html" },
+  { "title": "circle#13", "file": "circle13.html" },
+  { "title": "circle#16", "file": "circle16.html" }
 ]

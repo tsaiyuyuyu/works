@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const nextBtn = document.createElement("a");
       nextBtn.href = nextFile;
       nextBtn.className = "next-button";
-      nextBtn.textContent = "View next >";
+      nextBtn.textContent = "View next >>";
 
       const footer = document.querySelector("footer");
       if (footer) {
