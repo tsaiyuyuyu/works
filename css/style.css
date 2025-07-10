@@ -285,42 +285,15 @@ header nav .mail:hover .mail-icon {
 .item {
   width: 100%;
 }
-.item .name {
-  opacity: 0;
-  position: absolute;
-  bottom: -5px;
-  z-index: 4;
-  transform: translateY(20);
-  transition: all 0.2s;
-}
 .item .name p {
   color: #202a20;
   border-bottom: 1px solid #202a20;
-  padding-bottom: 2px;
+  padding: 10px 0;
   font-size: 0.9rem;
   margin-left: 6px;
 }
-.item::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0;
-  background: #ffffff;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  pointer-events: none;
-  transition: all 0.5s;
-}
-.item:hover::before {
-  content: "";
-  height: 30px;
-  background: #fff;
-}
-.item:hover .name {
-  opacity: 1;
-  transform: translateY(-5px);
+.item:hover {
+  cursor: url(".//img/pointer.svg"), auto;
 }
 
 .item img {
