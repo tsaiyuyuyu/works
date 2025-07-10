@@ -272,7 +272,7 @@ header nav .mail:hover .mail-icon {
 .gallery {
   display: flex;
   gap: 3vw;
-  padding: 5px 3vw;
+  padding: 10px 3vw;
 }
 
 .flex-column {
