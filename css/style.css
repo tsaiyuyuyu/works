@@ -288,12 +288,12 @@ header nav .mail:hover .mail-icon {
 .item .name p {
   color: #202a20;
   border-bottom: 1px solid #202a20;
-  padding: 10px 0;
+  padding: 7px 0;
   font-size: 0.9rem;
   margin-left: 6px;
 }
 .item:hover {
-  cursor: url(".//img/pointer.svg"), auto;
+  cursor: url("/works/img/test-cursor.png"), auto;
 }
 
 .item img {
@@ -416,7 +416,8 @@ header nav .mail:hover .mail-icon {
   .work .images img {
     width: 100%;
   }
-  .work .images div.half, .work .images div.thirds {
+  .work .images div.half,
+  .work .images div.thirds {
     width: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */

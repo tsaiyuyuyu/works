@@ -295,15 +295,16 @@ header {
     p {
       color: $main-color-300;
       border-bottom: 1px solid $main-color-300;
-      padding: 10px 0;
+      padding: 7px 0;
       font-size: 0.9rem;
       margin-left: 6px;
     }
   }
   &:hover {
-    cursor: url(".//img/pointer.svg"), auto;
+    cursor: url("/works/img/test-cursor.png"), auto;
   }
 }
+
 
 .item img {
   width: 100%;
@@ -425,7 +426,8 @@ header {
       img {
         width: 100%;
       }
-       div.half, div.thirds {
+      div.half,
+      div.thirds {
         width: 100vw;
       }
     }
