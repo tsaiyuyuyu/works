@@ -415,11 +415,13 @@ header {
   .work {
     flex-direction: column;
     .info {
-      width: 100vw;
       padding: 20px 5vw;
       display: flex;
       flex-direction: column;
       gap: 20px;
+       .title {
+        font-size: 1.8rem;
+       }
     }
     .images {
       width: 100vw;
