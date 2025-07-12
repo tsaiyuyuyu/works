@@ -387,6 +387,9 @@ header nav .mail:hover .mail-icon {
   width: 100%;
   display: block;
 }
+.work .images div.half {
+  width: 50%;
+}
 .work .images div.thirds {
   width: 33.3%;
 }
@@ -413,7 +416,7 @@ header nav .mail:hover .mail-icon {
   .work .images img {
     width: 100%;
   }
-  .work .images div.thirds {
+  .work .images div.half, .work .images div.thirds {
     width: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */
