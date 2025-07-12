@@ -352,7 +352,7 @@ header nav .mail:hover .mail-icon {
   border-bottom: 1.5px solid #202a20;
 }
 .work .info .credit {
-  grid-column: 3/4;
+  grid-column: 1/4;
   grid-row: 2/3;
   font-size: 0.9rem;
   line-height: 1.4;
