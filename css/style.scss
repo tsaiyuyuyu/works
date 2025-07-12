@@ -69,6 +69,7 @@ button {
 
 footer {
   padding: 20px 3vw;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +77,11 @@ footer {
     font-size: 12px;
     font-weight: 400;
     color: $main-color-300;
+  }
+}
+@media (max-width: 991px) {
+  footer {
+    margin-top: 20px;
   }
 }
 
@@ -178,11 +184,13 @@ header {
 }
 @media (max-width: 991px) {
   #header {
-    height: fit-content;
+    height: 50px;
   }
-  .logo {
-    width: 150px;
-    padding-top: 5px;
+  header {
+    .logo {
+      width: 160px;
+      padding-top: 8px;
+    }
   }
   .filter-buttons button {
     &::before {
@@ -299,9 +307,8 @@ header {
     p {
       color: $main-color-300;
       border-bottom: 1px solid $main-color-300;
-      padding: 7px 0;
+      padding: 7px 3px;
       font-size: 0.9rem;
-      margin-left: 6px;
     }
   }
   &:hover {
@@ -329,16 +336,25 @@ header {
   .gallery {
     flex-direction: column;
     padding: 1vw 0;
+    gap: 50px;
   }
 
   .flex-column {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 50px;
   }
 
   .flex-column .item {
     width: 100%;
+  }
+  .item {
+    .name {
+      p {
+        margin: 0 3vw;
+      }
+    }
   }
 }
 
