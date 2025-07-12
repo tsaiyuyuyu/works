@@ -180,6 +180,10 @@ header {
   #header {
     height: fit-content;
   }
+  .logo {
+    width: 150px;
+    padding-top: 5px;
+  }
   .filter-buttons button {
     &::before {
       content: "";
@@ -305,7 +309,6 @@ header {
   }
 }
 
-
 .item img {
   width: 100%;
   display: block;
@@ -419,16 +422,15 @@ header {
       display: flex;
       flex-direction: column;
       gap: 20px;
-       .title {
+      .title {
         font-size: 1.8rem;
-       }
+      }
     }
     .images {
       width: 100vw;
       img {
         width: 100%;
       }
-      div.half,
       div.thirds {
         width: 100vw;
       }
