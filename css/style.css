@@ -8,8 +8,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
 a,
 ul,
@@ -22,91 +20,6 @@ section {
   padding: 0;
 }
 
-/*--------- 共通設定 ---------*/
-* {
-  box-sizing: content-box;
-}
-
-body {
-  font-family: "Montserrat", "Noto Sans TC", sans-serif;
-  font-optical-sizing: auto;
-}
-
-::-moz-selection {
-  color: #202a20;
-  background-color: #cfffa0;
-}
-
-::selection {
-  color: #202a20;
-  background-color: #cfffa0;
-}
-
-.container {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
-  padding-top: 65px;
-}
-
-a,
-button {
-  color: #202a20;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.for-m {
-  display: none;
-}
-
-@media (max-width: 991px) {
-  .container {
-    padding-top: 50px;
-  }
-  .for-m {
-    display: block;
-    width: 100vw;
-  }
-  .for-pc {
-    display: none;
-  }
-}
-footer {
-  padding: 20px 3vw;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer p {
-  font-size: 12px;
-  font-weight: 400;
-  color: #202a20;
-}
-
-@media (max-width: 991px) {
-  footer {
-    margin-top: 20px;
-  }
-}
-.next-button {
-  width: -moz-fit-content;
-  width: fit-content;
-  color: #202a20;
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 20px;
-  font-style: italic;
-  font-weight: 400;
-  padding: 0 0 5px;
-  transition: background 0.3s ease;
-}
-.next-button:hover {
-  color: #498624;
-}
-
-/*--------- 選單 ---------*/
 #header {
   height: 65px;
   width: 100%;
@@ -285,6 +198,90 @@ header nav .mail:hover .mail-icon {
     top: 0;
   }
 }
+footer {
+  padding: 20px 3vw;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #202a20;
+}
+
+@media (max-width: 991px) {
+  footer {
+    margin-top: 20px;
+  }
+}
+.next-button {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #202a20;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0 0 5px;
+  transition: background 0.3s ease;
+}
+.next-button:hover {
+  color: #498624;
+}
+
+/*--------- 共通設定 ---------*/
+* {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+}
+
+::-moz-selection {
+  color: #202a20;
+  background-color: #cfffa0;
+}
+
+::selection {
+  color: #202a20;
+  background-color: #cfffa0;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 65px;
+}
+
+a,
+button {
+  color: #202a20;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.for-m {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding-top: 50px;
+  }
+  .for-m {
+    display: block;
+    width: 100vw;
+  }
+  .for-pc {
+    display: none;
+  }
+}
 /*--------- 首頁 ---------*/
 .gallery {
   display: flex;
@@ -308,9 +305,6 @@ header nav .mail:hover .mail-icon {
   padding: 7px 3px;
   font-size: 0.9rem;
 }
-.item:hover {
-  cursor: url("/works/img/test-cursor.png"), auto;
-}
 
 .item img {
   width: 100%;
@@ -332,18 +326,20 @@ header nav .mail:hover .mail-icon {
   .gallery {
     flex-direction: column;
     padding: 1vw 0;
-    gap: 50px;
+    gap: 30px;
   }
   .flex-column {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
   }
   .flex-column .item {
     width: 100%;
   }
   .item .name p {
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 0 3vw;
   }
 }

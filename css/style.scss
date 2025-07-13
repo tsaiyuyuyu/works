@@ -7,8 +7,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
 a,
 ul,
@@ -19,14 +17,14 @@ header,
 section {
   margin: 0;
   padding: 0;
-  // border: 1px solid salmon;
-  // box-sizing: border-box;
 }
 
 $main-color-100: #cfffa0;
 $main-color-200: #498624;
 $main-color-300: #202a20;
 $font: "Montserrat", "Noto Sans TC", sans-serif;
+@import "header";
+@import "footer";
 
 /*--------- 共通設定 ---------*/
 * {
@@ -36,11 +34,11 @@ body {
   font-family: $font;
   font-optical-sizing: auto;
 }
+//選取
 ::selection {
   color: $main-color-300;
   background-color: $main-color-100;
 }
-
 .container {
   position: relative;
   min-height: 100vh;
@@ -70,229 +68,6 @@ button {
   }
 }
 
-footer {
-  padding: 20px 3vw;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  p {
-    font-size: 12px;
-    font-weight: 400;
-    color: $main-color-300;
-  }
-}
-@media (max-width: 991px) {
-  footer {
-    margin-top: 20px;
-  }
-}
-
-.next-button {
-  width: fit-content;
-  color: $main-color-300;
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 20px;
-  font-style: italic;
-  font-weight: 400;
-  padding: 0 0 5px;
-  transition: background 0.3s ease;
-
-  &:hover {
-    color: $main-color-200;
-  }
-}
-
-/*--------- 選單 ---------*/
-#header {
-  height: 65px;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  background: #fff;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1vw 3vw;
-  .logo {
-    width: 180px;
-    padding-top: 4px;
-    img {
-      width: 100%;
-    }
-  }
-
-  nav {
-    display: flex;
-    .mail {
-      width: 25px;
-      height: 25px;
-      padding: 10px 0 0 20px;
-      cursor: pointer;
-      .mail-text {
-        display: none;
-        line-height: 25px;
-        margin: -1.5px;
-        font-style: italic;
-        color: $main-color-200;
-      }
-      &:hover {
-        width: unset;
-        .mail-text {
-          display: block;
-        }
-        .mail-icon {
-          display: none;
-        }
-      }
-    }
-  }
-}
-.filter-buttons button {
-  font-size: 16px;
-  font-family: $font;
-  font-weight: 500;
-  color: $main-color-300;
-  background: none;
-  border: none;
-  border-radius: 20px;
-  padding: 6px 10px;
-  margin: 2px 5px;
-  &::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    border-radius: 20px;
-    display: inline-block;
-    position: relative;
-    top: 3px;
-    left: -3px;
-    background: $main-color-300;
-    transition: all 0.5s ease-in-out;
-  }
-}
-
-.filter-buttons button:hover,
-.filter-buttons button:active {
-  &::before {
-    content: "";
-    background: $main-color-200;
-  }
-}
-
-.filter-buttons button:focus {
-  &::before {
-    content: "";
-    background: $main-color-200;
-  }
-}
-@media (max-width: 991px) {
-  #header {
-    height: 50px;
-  }
-  header {
-    .logo {
-      width: 160px;
-      padding-top: 8px;
-    }
-  }
-  .filter-buttons button {
-    &::before {
-      content: "";
-      display: none;
-    }
-  }
-}
-
-/*--------- 漢堡 ---------*/
-.hamburger {
-  display: none;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  width: 30px;
-  height: 22px;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-.hamburger span {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: $main-color-300;
-  left: 0;
-  transition: all 0.4s ease;
-}
-
-/* 三條線重疊時的位置 */
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  top: 9px;
-}
-
-.hamburger span:nth-child(3) {
-  top: 18px;
-}
-
-/* 點擊後變成 X */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 9px; /* 中心點 */
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 9px; /* 中心點 */
-}
-
-@media (max-width: 991px) {
-  .hamburger {
-    display: flex;
-    right: 3vw;
-  }
-
-  nav#nav-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    gap: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
-    .filter-buttons {
-      margin: 20px auto;
-      button {
-        margin: 15px auto;
-        display: block;
-      }
-    }
-    .mail {
-      padding: 5px;
-    }
-  }
-
-  nav#nav-menu.active {
-    top: 0;
-  }
-}
-
 /*--------- 首頁 ---------*/
 .gallery {
   display: flex;
@@ -309,7 +84,6 @@ header {
 
 .item {
   width: 100%;
-
   .name {
     p {
       color: $main-color-300;
@@ -317,9 +91,6 @@ header {
       padding: 7px 3px;
       font-size: 0.9rem;
     }
-  }
-  &:hover {
-    cursor: url("/works/img/test-cursor.png"), auto;
   }
 }
 
@@ -343,14 +114,14 @@ header {
   .gallery {
     flex-direction: column;
     padding: 1vw 0;
-    gap: 50px;
+    gap: 30px;
   }
 
   .flex-column {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
   }
 
   .flex-column .item {
@@ -359,6 +130,7 @@ header {
   .item {
     .name {
       p {
+        width: fit-content;
         margin: 0 3vw;
       }
     }

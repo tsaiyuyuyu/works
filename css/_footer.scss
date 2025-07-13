@@ -1,0 +1,33 @@
+footer {
+  padding: 20px 3vw;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: $main-color-300;
+  }
+}
+@media (max-width: 991px) {
+  footer {
+    margin-top: 20px;
+  }
+}
+
+.next-button {
+  width: fit-content;
+  color: $main-color-300;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 0 0 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    color: $main-color-200;
+  }
+}
