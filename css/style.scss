@@ -45,7 +45,7 @@ body {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  // padding: 20px 2vw;
+  padding-top: 65px;
 }
 a,
 button {
@@ -58,6 +58,9 @@ button {
   display: none;
 }
 @media (max-width: 991px) {
+  .container {
+    padding-top: 50px;
+  }
   .for-m {
     display: block;
     width: 100vw;
@@ -104,6 +107,10 @@ footer {
 /*--------- 選單 ---------*/
 #header {
   height: 65px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background: #fff;
 }
 header {
   display: flex;
@@ -362,7 +369,7 @@ header {
 .work {
   padding: 0;
   .info {
-    padding: 50px 2vw;
+    padding: 50px 3vw;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr auto;
