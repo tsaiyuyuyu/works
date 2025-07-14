@@ -348,7 +348,7 @@ button {
   padding: 0;
 }
 .work .info {
-  width: 100%;
+  width: 94vw;
   padding: 50px 3vw;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -396,7 +396,7 @@ button {
   grid-row: 2/3;
 }
 .work .images {
-  width: 100%;
+  width: 100% p;
   display: flex;
   flex-wrap: wrap;
 }
@@ -422,6 +422,8 @@ button {
     flex-direction: column;
   }
   .work .info {
+    width: -moz-fit-content;
+    width: fit-content;
     padding: 20px 5vw;
     display: flex;
     flex-direction: column;
