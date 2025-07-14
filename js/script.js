@@ -149,25 +149,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const transition = document.getElementById("page-transition");
-  const links = document.querySelectorAll("a:not([target]):not([href^='#'])");
-
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const href = this.href;
-
-      // 顯示轉場
-      transition.classList.add("active");
-
-      // 延遲導頁（建議 800ms～1200ms）
-      setTimeout(() => {
-        window.location.href = href;
-      }, 1000);
-    });
-  });
-});
-
-
 
