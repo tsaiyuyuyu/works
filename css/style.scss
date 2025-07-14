@@ -20,7 +20,7 @@ section {
 }
 
 $main-color-100: #cfffa0;
-$main-color-200: #498624;
+$main-color-200: #00aa66;
 $main-color-300: #202a20;
 $font: "Montserrat", "Noto Sans TC", sans-serif;
 @import "header";
@@ -36,8 +36,8 @@ body {
 }
 //選取
 ::selection {
-  color: $main-color-300;
-  background-color: $main-color-100;
+  color: #fff;
+  background-color: $main-color-200;
 }
 .container {
   position: relative;
@@ -141,7 +141,7 @@ button {
 .work {
   padding: 0;
   .info {
-      width:94vw;
+    width: 94vw;
     padding: 50px 3vw;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -232,5 +232,60 @@ button {
         width: 100vw;
       }
     }
+  }
+}
+
+/* 轉場背景區塊 */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background-color: #fff; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* 顯示時 */
+#page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* 三個白色點 */
+.dot-loader {
+  display: flex;
+  gap: 10px;
+}
+
+.dot-loader span {
+  width: 12px;
+  height: 12px;
+  background: $main-color-300;
+  border-radius: 50%;
+  opacity: 0;
+  animation: dotFade 1s infinite;
+}
+
+.dot-loader span:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotFade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
