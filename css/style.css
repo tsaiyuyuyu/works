@@ -348,6 +348,7 @@ button {
   padding: 0;
 }
 .work .info {
+  width:100%;
   padding: 50px 3vw;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
