@@ -147,6 +147,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll(".lazy-image");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const highResSrc = img.getAttribute("data-src");
+
+        if (highResSrc) {
+          const newImg = new Image();
+          newImg.src = highResSrc;
+          newImg.onload = () => {
+            img.src = highResSrc;
+            img.classList.add("loaded");
+          };
+        }
+
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  lazyImages.forEach(img => {
+    observer.observe(img);
+  });
+});
 
 
 
