@@ -110,6 +110,20 @@ button {
   transform: translateY(0);
 }
 
+.blur-image {
+  width: 100%;
+  display: block;
+  opacity: 0;
+  filter: blur(20px);
+  transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+.blur-image.loaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
+
 @media (max-width: 991px) {
   .gallery {
     flex-direction: column;
@@ -205,20 +219,6 @@ button {
   }
 }
 
-
-
-.lazy-image {
-  width: 100%;
-  display: block;
-  opacity: 0;
-  filter: blur(20px);
-  transition: filter 0.6s ease, opacity 0.6s ease;
-}
-
-.lazy-image.loaded {
-  filter: blur(0);
-  opacity: 1;
-}
 
 @media (min-width: 992px) and (max-width: 1400px) {
   .two-lines {
