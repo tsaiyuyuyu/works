@@ -87,36 +87,6 @@ function observeFadeIn() {
   });
 }
 
-// ✅ 模糊縮圖（Low Quality Image Placeholders）
-document.addEventListener("DOMContentLoaded", () => {
-  const blurImages = document.querySelectorAll(".blur-image");
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        const highResSrc = img.getAttribute("data-src");
-
-        if (highResSrc) {
-          const newImg = new Image();
-          newImg.src = highResSrc;
-          newImg.onload = () => {
-            img.src = highResSrc;
-            img.classList.add("loaded");
-          };
-        }
-
-        observer.unobserve(img);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  blurImages.forEach(img => {
-    observer.observe(img);
-  });
-});
 
 
 // ✅ 首次載入執行（等整體 DOM Ready）
