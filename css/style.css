@@ -412,6 +412,7 @@ button {
   width: 100% p;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .work .images img,
 .work .images video {
